@@ -11,14 +11,14 @@ pipeline{
             sh " git clone https://github.com/anilkakarla01/maven-demo.git"
           }
        }
-       stage(Build){
+       stage("Build"){
            steps{
             dir("maven-demo"){
                 sh "mvn clean install"
             }
            }
        }
-       stage(Test){
+       stage("Test"){
               steps{
                 dir("maven-demo"){
                     sh "mvn test"
